@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CanSat Control Panel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>CanSat Control Panel</h1>
+    <div>
+      <button onclick="sendCommand('START')">Start</button>
+      <button onclick="sendCommand('STOP')">Stop</button>
+      <button onclick="sendCommand('RESET')">Reset</button>
+    </div>
+    <div>
+      <h2>Status</h2>
+      <p id="status">Loading...</p>
+      <button onclick="getStatus()">Refresh Status</button>
+    </div>
+
+    <script>
+      function sendCommand(command) {
+        $.post("/send_command", {command: command}, function(response) {
+          alert(response.status + ": " + response.command);
+        });
+      }
+
+      function getStatus() {
+        $.get("/get_status", function(response) {
+          $('#status').text(response.status);
+        });
+      }
+
+      // Refresh status on page load
+      $(document).ready(function() {
+        getStatus();
+      });
+    </script>
+  </body>
+</html>
