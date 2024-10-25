@@ -45,48 +45,45 @@
 
 
 ### 2.상세설계
-#### 2.1. 시스템 구성도
+#### 2.1. 시스템 구성도(미수정)
+> 아래 시스템의 구성도 설명 내용 . 
 <img width="600px" alt="시스템 구성도" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f0e7c7ed-deb1-47ee-8090-32f712fa2b23">
 <br/>
 
 #### 2.3. 사용기술
-| 이름                  | 버전    |
-|:---------------------:|:-------:|
-| Python                | 3.8.0   |
-| Django                | 3.2.9   |
-| Django Rest Framework | 3.12.0  |
-| Node.js               | 16.16.0 |
-| Vue.js                | 2.5.13  |
+| 이름                    | 버전    |
+|:-----------------------:|:-------:|
+| Python                  | 3.9.2   |
+| Flask                   | 2.1.0   |
+| Ubuntu                  | 20.04   |
+| GNU Compiler Collection | 9.3.0   |
+| GNU Make                | 4.2.1   |
+
 <br/>
 
 
 ### 3. 개발결과
 [코딩역량강화플랫폼 Online Judge](http://10.125.121.115:8080/)를 예시로 작성하였습니다.
-#### 3.1. 전체시스템 흐름도
-- 유저 플로우 차트
+#### 3.1. 전체시스템 흐름(미수정)
+- 캔위성 <-> flask web server 플로우 차트
   > 코딩 역량강화 플랫폼의 회원가입 부분만 작성했습니다. <br/>
   > 사용자의 행동 흐름을 도식화하여 보여줍니다.
   <img width="400px" alt="유저 플로우 차트" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/c8de7c98-efd8-4f64-a39a-720faabccd78" />
 
-- 테스크 플로우 차트
+- flask web server <-> 지상국 web server
   > 코딩 역량강화 플랫폼의 로그인 부분만 작성했습니다. <br/>
   > 주요 테스크의 프로세스를 도식화하여 보여줍니다.
   <img width="400px" alt="테스크 플로우 차트" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/b83502a9-032d-4453-8687-428d54643610" />
 
-- 시스템 플로우 차트
+- 지상국 web에서 데이터 확인
   > 코딩 역량강화 플랫폼의 로그인 부분만 작성했습니다. <br/>
   > 테스크의 흐름에 따른 데이터 처리를 도식화하여 보여줍니다.
   <img width="600px" alt="시스템 플로우 차트" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/1bfb66f0-446c-4450-8a81-a78bfe5ac9ce" />
 
-  
-- IA(Information Architecture)
-  > 정보나 시스템의 구조를 도식화하여 보여줍니다. <br/>
-  <img width="600px" alt="IA" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/07d842fe-fb73-4079-97a3-58b2495ff331" />
-
 <br/>
 
 #### 3.2. 기능설명
-##### ` 메인 페이지 `
+##### ` 캔위성 데이터 수집 과정(c++내용)`
 - 상단 배너
   - 3초에 마다 자동으로 내용이 넘어갑니다. <br/>
     ![상단 배너](https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/4640389f-dcaf-4b78-916e-188c8e9c6ee7)
@@ -109,7 +106,7 @@
     <img width="200px" alt="실시간 랭킹" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/8492e285-5423-4c00-bc46-400cbe733d35">
 <br/>
 
-##### ` 문제 페이지 `
+##### ` 캔위성 통신과정(flask 내용 기술) `
 - 문제 목록
   - 사용자가 설정한 한 번에 보여줄 문제 갯수 만큼 한 화면에 문제를 띄워줍니다.
   - 검색창에서 문제의 제목 및 번호로 문제를 검색할 수 있습니다.
@@ -120,7 +117,7 @@
 <br/>
 
 
-#### 3.3. 기능명세서
+#### 3.3. 기능명세서 (최종때 작성 예정..?)
 <img width="200px" alt="실시간 랭킹" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/97ad3fea-f90a-437a-b611-3fb8cd24070e" />
 
 |라벨|이름|상세|
@@ -139,7 +136,26 @@
 
 <br/>
 
-#### 3.4. 디렉토리 구조
+#### 3.4. 디렉토리 구조(미수정)
+##### ` 캔위성 내부 라즈베리 파이`
+```
+├── build/                      # webpack 설정 파일
+├── config/                     # 프로젝트 설정 파일
+├── deplay/                     # 배포 설정 파일
+├── src/                        # 소스 코드
+│   ├── assets/                 # 이미지, 폰트 등의 정적 파일
+│   ├── pages/                  # 화면에 나타나는 페이지
+│   │   ├── page1/              # 페이지1
+│   │   ├── page2/              # 페이지2
+│   │   ├── components/         # 여러 페이지에서 공통적으로 사용되는 컴포넌트
+│   ├── router/                 # 라우터
+│   ├── store/                  # global state store
+│   ├── styles/                 # 스타일
+│   ├── utils/                  # 유틸리티
+├── static/                     # 정적 파일
+```
+
+##### ` 지상국 내부 폴더`(미수정)
 ```
 ├── build/                      # webpack 설정 파일
 ├── config/                     # 프로젝트 설정 파일
@@ -159,7 +175,7 @@
 <br/>
 
 
-### 4. 설치 및 사용 방법
+### 4. 설치 및 사용 방법(미수정)
 **필요 패키지**
 - 위의 사용 기술 참고
 
@@ -175,17 +191,17 @@ $ npm run dev
 <br/>
 
 
-### 5. 소개 및 시연영상
+### 5. 소개 및 시연영상 (통신 아직 미구현)
 [<img width="700px" alt="소개 및 시연영상" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/162132cd-9af5-4154-9b9a-41c96cf5e8fd" />](https://www.youtube.com/watch?v=EfEgTrm5_u4)
 
 <br/>
 
 ### 6. 팀 소개
-| MEMBER1 | MEMBER2 | MEMBER3 |
-|:-------:|:-------:|:-------:|
-|<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |
-| member1@pusan.ac.kr | member2@gmail.com | member3@naver.com |
-| 프론트앤드 개발 | 인프라 구축 <br/> 백앤드 개발 | DB 설계 <br/> 백앤드 개발 |
+| MEMBER1 | MEMBER2 | MEMBER3 | MEMBER4 | MEMBER5 | MEMBER6 |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |
+| member1@pusan.ac.kr | member2@gmail.com | member3@naver.com | member1@pusan.ac.kr | member2@gmail.com | member3@naver.com |
+| 프론트앤드 개발 | 인프라 구축 <br/> 백앤드 개발 | DB 설계 <br/> 백앤드 개발 | 프론트앤드 개발 | 인프라 구축 <br/> 백앤드 개발 | DB 설계 <br/> 백앤드 개발 |
 
 
 <br/>
@@ -197,5 +213,11 @@ $ npm run dev
 - MEMBER2
   > 작성하세요.
 - MEMBER3
+  > 작성하세요.
+- MEMBER4
+  > 작성하세요.
+- MEMBER5
+  > 작성하세요.
+- MEMBER6
   > 작성하세요.
 <br/>
