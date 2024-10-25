@@ -197,17 +197,17 @@ $ npm run dev
 <br/>
 
 ### 6. 팀 소개
-| MEMBER1 | MEMBER2 | MEMBER3 | MEMBER4 | MEMBER5 | MEMBER6 |
+| 이승재 | 정연수 | 윤주연 | 배소연 | 김준우 | 주기윤 |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |
 | member1@pusan.ac.kr | member2@gmail.com | member3@naver.com | member1@pusan.ac.kr | member2@gmail.com | member3@naver.com |
-| 프론트앤드 개발 | 인프라 구축 <br/> 백앤드 개발 | DB 설계 <br/> 백앤드 개발 | 프론트앤드 개발 | 인프라 구축 <br/> 백앤드 개발 | DB 설계 <br/> 백앤드 개발 |
+| c++ 데이터 전송 구현 | 인프라 구축 <br/> flask 프레임워크 개발 | LTE 통신 구현 | 통신 인프라 구축 <br/> (지상국) | 통신 인프라 구축 <br/> (캔위성) | 통신 인프라 구축 <br/> (캔위성) |
 
 
 <br/>
 
 
-### 7. 해커톤 참여 후기
+### 7. 해커톤 참여 후기 (최종 예정)
 - MEMBER1
   > 작성하세요.
 - MEMBER2
