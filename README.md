@@ -45,12 +45,8 @@
 
 
 ### 2.상세설계
-#### 2.1. 시스템 구성도(개념도 미구현)
-> 아래 시스템의 구성도 설명 내용 . 
-<img width="600px" alt="시스템 구성도" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f0e7c7ed-deb1-47ee-8090-32f712fa2b23">
-<br/>
 
-#### 2.3. 사용기술
+#### 2.1. 사용기술
 | 이름                    | 버전    |
 |:-----------------------:|:-------:|
 | Python                  | 3.9.2   |
@@ -63,8 +59,8 @@
 
 
 ### 3. 개발결과
-[코딩역량강화플랫폼 Online Judge](http://10.125.121.115:8080/)를 예시로 작성하였습니다.
-#### 3.1. 전체시스템 흐름(도식도 미구현)
+
+#### 3.1. 전체시스템 흐름
 - 캔위성 <-> flask web server <-> 지상국 web server 플로우 차트
   > 전파의 Raw data 수신 <br/>
   > UNIX 도메인 소켓을 사용하여 C++와 Python 간 통신 <br/>
@@ -78,94 +74,53 @@
 <br/>
 
 #### 3.2. 기능설명
-##### ` 캔위성 데이터 수집 과정(c++내용)`
--  HOW TO 데이터 수집..
+#### 캔위성 데이터 수집 하드웨어 구성
+- 센서 리스트: 온도센서(BMP280), 압력센서(…), GPS 모듈(…), IMU(…)
+- 전원 관리: 3.7V Li-Po 배터리, DC-DC 스텝업 회로, 전원 안정화 회로 설계도
+- LTE 모듈: Quectel EC25 사용(AT 명령어를 통한 연결 확인)
+
 <br/>
 
-##### ` 캔위성 통신과정(flask 내용 기술) `
-- 통신과정
-  - 세부 통신 과정 (모듈 설명?)
- 
-##### ` 전파 탐지 비교 `
-- 받아온 데이터와 지상관측 데이터 비교
+##### ` ML/DL 기반 전파 데이터 분석`
+- 전처리: FFT 기반 잡음 제거, 이동평균필터 적용
+- 모델: CNN 기반 분류기(전파 간섭 패턴 식별), TensorFlow Lite 모델 사용
+- 데이터셋: 사전 수집된 전파 패턴 1000개(학습:검증:테스트 = 6:2:2)
+- 결과 전달: Flask 서버에서 inference 수행 후 지상국으로 확률값 전송
 
 
 <br/>
 
 #### 3.4. 디렉토리 구조(구현중)
-##### ` 캔위성 내부 라즈베리 파이`(구현 예정)
+##### ` 캔위성 내부 라즈베리 파이`
 ```
-├── build/                      # webpack 설정 파일
-├── config/                     # 프로젝트 설정 파일
-├── deplay/                     # 배포 설정 파일
-├── src/                        # 소스 코드
-│   ├── assets/                 # 이미지, 폰트 등의 정적 파일
-│   ├── pages/                  # 화면에 나타나는 페이지
-│   │   ├── page1/              # 페이지1
-│   │   ├── page2/              # 페이지2
-│   │   ├── components/         # 여러 페이지에서 공통적으로 사용되는 컴포넌트
-│   ├── router/                 # 라우터
-│   ├── store/                  # global state store
-│   ├── styles/                 # 스타일
-│   ├── utils/                  # 유틸리티
-├── static/                     # 정적 파일
-```
-
-##### ` 지상국 내부 폴더`(구현 예정)
-```
-├── build/                      # webpack 설정 파일
-├── config/                     # 프로젝트 설정 파일
-├── deplay/                     # 배포 설정 파일
-├── src/                        # 소스 코드
-│   ├── assets/                 # 이미지, 폰트 등의 정적 파일
-│   ├── pages/                  # 화면에 나타나는 페이지
-│   │   ├── page1/              # 페이지1
-│   │   ├── page2/              # 페이지2
-│   │   ├── components/         # 여러 페이지에서 공통적으로 사용되는 컴포넌트
-│   ├── router/                 # 라우터
-│   ├── store/                  # global state store
-│   ├── styles/                 # 스타일
-│   ├── utils/                  # 유틸리티
-├── static/                     # 정적 파일
+├── cpp/                   # C++ 센서 드라이버 및 데이터 수집 로직
+│   ├── main.cpp
+│   ├── sensor_drivers/
+│   ├── utils/
+├── python/
+│   ├── app.py             # Flask 서버 진입점
+│   ├── ml_models/         # 전파 분석 ML 모델 파일(.tflite)
+│   ├── utils/             # JSON 파싱, 에러 핸들러
+├── scripts/
+│   ├── init_lte.sh        # LTE 모듈 초기화 스크립트 (미구현)
+│   ├── run_server.sh
 ```
 <br/>
 
 
-### 4. 설치 및 사용 방법(미수정)
+### 4. 설치 및 사용 방법
 **필요 패키지(캔위성)**
 - 위의 사용 기술 참고
 
-```bash
-$ git clone https://github.com/test/test.git
-$ cd test/frontend
-$ npm i
-$ export NODE_ENV="development" # windows: set NODE_ENV=development
-$ npm run build:dll
-$ export TARGET="http://localhost:8000"  # windows: set NODE_ENV=http://localhost:8000
-$ npm run dev
-```
-<br/>
-
-**필요 패키지(지상국)**
-- 위의 사용 기술 참고
-
-```bash
-$ git clone https://github.com/test/test.git
-$ cd test/frontend
-$ npm i
-$ export NODE_ENV="development" # windows: set NODE_ENV=development
-$ npm run build:dll
-$ export TARGET="http://localhost:8000"  # windows: set NODE_ENV=http://localhost:8000
-$ npm run dev
-```
-<br/>
-
-
-### 5. 소개 및 시연영상 (현재 구현 중, 추후 추가 예정)
+#### 4.1. 캔위성 측 환경 구축
+1. 라즈베리 파이 OS 플래싱: Raspberry Pi Imager로 Ubuntu Server 20.04 이미지 작성
+2. `sudo apt-get update && sudo apt-get install python3.9 python3-pip g++ make`
+3. C++ 센서 드라이버 빌드: `cd cpp && make`
+4. Flask 서버 실행: `cd python && python3 app.py`
 
 <br/>
 
-### 6. 팀 소개
+### 5. 팀 소개
 | 이승재 | 정연수 | 윤주연 | 배소연 | 김준우 | 주기윤 |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |
