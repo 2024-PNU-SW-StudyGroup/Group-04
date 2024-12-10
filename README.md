@@ -125,7 +125,7 @@
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |<img width="100px" alt="MEMBER1" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/f5b5df2a-e174-437d-86b2-a5a23d9ee75d" /> | <img width="100px" alt="MEMBER2" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/fe4e8910-4565-4f3f-9bd1-f135e74cb39d" /> | <img width="100px" alt="MEMBER3" src="https://github.com/pnuswedu/SW-Hackathon-2024/assets/34933690/675d8471-19b9-4abc-bf8a-be426989b318" /> |
 | member1@pusan.ac.kr | member2@gmail.com | member3@naver.com | member1@pusan.ac.kr | member2@gmail.com | member3@naver.com |
-| c++ 데이터 전송 구현 | 인프라 구축 <br/> flask 프레임워크 개발 | LTE 통신 구현 | 통신 인프라 구축 <br/> (지상국) | 통신 인프라 구축 <br/> (캔위성) | 통신 인프라 구축 <br/> (캔위성) |
+| c++ 데이터 전송 구현 | 인프라 구축 <br/> flask 프레임워크 개발 | LTE 통신 구현 | 통신 인프라 구축 <br/> | 통신 인프라 구축 <br/> (캔위성) | 통신 인프라 구축 <br/> (캔위성) |
 
 
 <br/>
@@ -133,15 +133,15 @@
 
 ### 7. 참여 후기 (최종때 작성)
 - MEMBER1
-  > 작성하세요.
+  > 이 프로젝트를 통해 항공우주 캔위성의 설계와 통신 시스템 구축에 대한 실제 경험을 할 수 있었다. 다양한 공학 분야가 융합된 복잡한 프로젝트에서 실시간 데이터 통신의 중요성을 깊이 이해하게 되었다.
 - MEMBER2
-  > 작성하세요.
+  > 프로젝트 초기에는 많은 어려움이 있었지만, 팀원들과 협력하여 문제를 하나씩 해결해 나가면서 많은 성장을 할 수 있었습니다. Flask 웹 서버를 구축하면서 백엔드 시스템에 대한 이해도가 높아졌습니다.
 - MEMBER3
-  > 작성하세요.
+  > 이 프로젝트를 통해 캔위성의 구조와 작동 원리를 깊이 있게 이해할 수 있었습니다. 실제 위성이 데이터를 수집하고 전송하는 과정을 직접 설계하고 구현해보며, 이론적 지식뿐만 아니라 실용적인 기술을 습득하는 데 큰 도움이 되었습니다.
 - MEMBER4
-  > 작성하세요.
+  > 이 프로젝트를 통해 기존에 배운 지식을 실제 문제 해결에 적용해보며 많은 것을 배울 수 있었다. 특히, 다양한 센서 데이터를 처리하고 분석하는 과정에서 데이터 사이언스에 대한 흥미가 더욱 커졌다. 
 - MEMBER5
-  > 작성하세요.
+  > 프로젝트 과정에서 통신 인프라를 구축하면서 많은 기술적 문제에 직면했지만, 그만큼 많은 해결책도 배울 수 있었습니다. 실제 적용 가능한 기술을 개발하며 이론뿐만 아니라 실무 경험을 쌓을 수 있어 매우 의미 있는 시간이었습니다.
 - MEMBER6
-  > 작성하세요.
+  > 캔위성 프로젝트의 통신 시스템을 구축하는 과정은 매우 어려웠지만, 그만큼 좋은 경험이었습니다. 실시간 데이터 전송과 분석을 위한 시스템을 직접 설계하고 구현해보면서, 제 역량을 크게 넓힐 수 있었습니다.
 <br/>
